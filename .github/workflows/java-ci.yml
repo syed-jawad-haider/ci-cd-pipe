@@ -1,15 +1,12 @@
 name: Java Assignment 2 CI
-
 on:
   push:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     
@@ -21,8 +18,8 @@ jobs:
     
     - name: Compile Java Files
       run: |
-        javac LoginApp.java
-        javac LoginAppTest.java
+        javac Assignment\ 2/src/LoginApp.java
+        javac Assignment\ 2/src/LoginAppTest.java
     
     - name: Run Tests
-      run: java LoginAppTest
+      run: java -cp "Assignment 2/src" LoginAppTest
